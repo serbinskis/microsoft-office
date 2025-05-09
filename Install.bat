@@ -28,7 +28,7 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com
 title Extracting - Microsoft Office 2016
 powershell -Command "Invoke-WebRequest -Uri 'https://www.7-zip.org/a/7za920.zip' -OutFile '7za920.zip'"
 powershell -Command "Expand-Archive -Path '7za920.zip' -DestinationPath '.'"
-7za x Office2016.zip.001
+7za x Office2016.zip.001 >nul
 del /s /q Office2016.zip.* >nul
 
 title Installing - Microsoft Office 2016
