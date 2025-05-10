@@ -6,8 +6,8 @@ cd "%SystemRoot%\Office2016Activate"
 powershell -command "Add-MpPreference -ExclusionPath \"$env:SystemRoot\Office2016Activate\"" >nul
 
 powershell -command "(new-object System.Net.WebClient).DownloadFile('https://github.com/serbinskis/microsoft-office-2016/raw/refs/heads/master/Activator/Office2016Activate.zip', \"$env:SystemRoot\Office2016Activate\Office2016Activate.zip\")"
-powershell -Command "Expand-Archive -Path 'Office2016Activate.zip' -DestinationPath '.'" >nul
-del Office2016Activate.zip >nul
+powershell -Command "Expand-Archive -Path '%SystemRoot%\Office2016Activate\Office2016Activate.zip' -DestinationPath '%SystemRoot%\Office2016Activate'" >nul
+del "%SystemRoot%\Office2016Activate\Office2016Activate.zip" >nul
 
 echo ^<?xml version="1.0" encoding="UTF-16"?^> > "%TEMP%\Office2016Activate.xml"
 echo ^<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"^> >> "%TEMP%\Office2016Activate.xml"
