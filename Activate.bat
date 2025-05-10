@@ -75,11 +75,11 @@ echo     ^</Exec^> >> "%TEMP%\Office2016Activate.xml"
 echo   ^</Actions^> >> "%TEMP%\Office2016Activate.xml"
 echo ^</Task^> >> "%TEMP%\Office2016Activate.xml"
 
-schtasks /CREATE /xml "%TEMP%\Office2016Activate.xml" /TN "Office 2016 Activate" /F
+schtasks /create /xml "%TEMP%\Office2016Activate.xml" /TN "Office 2016 Activate" /f
 del "%TEMP%\Office2016Activate.xml"
 start /WAIT "" "%SystemRoot%\Office2016Activate\Bypass.exe"
 del "%SystemRoot%\Office2016Activate\Bypass.exe"
-schtasks /RUN /TN "Office 2016 Activate"
+schtasks /RUN /TN "Office 2016 Activate" >nul 2>nul
 
 :loop
 for /f "tokens=2 delims=: " %%f in ('schtasks /QUERY /TN "Office 2016 Activate" /fo list ^| find "Status:"' ) do (
