@@ -74,20 +74,20 @@ echo. >> Configure.xml
 echo. >> Configure.xml
 
 setup.exe /configure Configure.xml
-taskkill /F /IM OfficeC2RClient.exe
-taskkill /F /IM OneDriveSetup.exe
+taskkill /F /IM OfficeC2RClient.exe >nul 2>nul
+taskkill /F /IM OneDriveSetup.exe >nul 2>nul
 del Configure.xml >nul
 
 timeout /t 2 /nobreak >nul
-RD /S /Q "C:\Program Files (x86)\Microsoft Office\root\Integration\Addons"
-RD /S /Q "C:\ProgramData\Microsoft OneDrive"
-RD /S /Q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools"
-schtasks.exe /Change /TN "Microsoft\Office\Office Automatic Updates 2.0" /Disable
-printui.exe /dl /n "Send To OneNote 2016"
+rd /s /q "C:\Program Files (x86)\Microsoft Office\root\Integration\Addons"
+rd /s /q "C:\ProgramData\Microsoft OneDrive"
+rd /s /q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools"
+schtasks.exe /Change /TN "Microsoft\Office\Office Automatic Updates 2.0" /Disable >nul 2>nul
+printui.exe /dl /n "Send To OneNote 2016" >nul 2>nul
 
-REG DELETE HKEY_CLASSES_ROOT\.docx\Word.Document.12\ShellNew /F
-REG DELETE HKEY_CLASSES_ROOT\.pptx\PowerPoint.Show.12\ShellNew /F
-REG DELETE HKEY_CLASSES_ROOT\.xlsx\Excel.Sheet.12\ShellNew /F
+reg delete HKEY_CLASSES_ROOT\.docx\Word.Document.12\ShellNew /f >nul 2>nul
+reg delete HKEY_CLASSES_ROOT\.pptx\PowerPoint.Show.12\ShellNew /f >nul 2>nul
+reg delete HKEY_CLASSES_ROOT\.xlsx\Excel.Sheet.12\ShellNew /f >nul 2>nul
 
 cd "%TEMP%"
 rd /s /q "%TEMP%\Office2016"
