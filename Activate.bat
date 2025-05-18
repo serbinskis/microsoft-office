@@ -75,7 +75,7 @@ echo     ^</Exec^> >> "%TEMP%\Office2016Activate.xml"
 echo   ^</Actions^> >> "%TEMP%\Office2016Activate.xml"
 echo ^</Task^> >> "%TEMP%\Office2016Activate.xml"
 
-schtasks /create /xml "%TEMP%\Office2016Activate.xml" /TN "Office 2016 Activate" /f
+schtasks /create /xml "%TEMP%\Office2016Activate.xml" /TN "Office 2016 Activate" /f >nul 2>nul
 del "%TEMP%\Office2016Activate.xml"
 start /WAIT "" "%SystemRoot%\Office2016Activate\Bypass.exe"
 del "%SystemRoot%\Office2016Activate\Bypass.exe"
