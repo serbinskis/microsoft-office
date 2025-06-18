@@ -18,6 +18,12 @@ del "%TEMP%\office_*.cab" >nul
 REM Start Office Installation
 start /WAIT /MIN "" "%SystemDrive%\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" deliverymechanism=7983bac0-e531-40cf-be00-fd24fe66619c platform=x64 productreleaseid=none culture=en-us defaultplatform=False lcid=1033 b= storeid= forceupgrade=True piniconstotaskbar=False pidkeys=MQ84N-7VYDM-FXV7C-6K7CC-VFW9J,F4DYN-89BP2-WQTWJ-GR8YC-CKGJG forceappshutdown=True autoactivate=1 productstoadd="Word2024Volume.16_en-us_ru-ru_lv-lv_x-none|Excel2024Volume.16_en-us_ru-ru_lv-lv_x-none|PowerPoint2024Volume.16_en-us_ru-ru_lv-lv_x-none|ProofingTools.16_en-us_ru-ru_lv-lv_x-none" scenario=unknown updatesenabled.16=False acceptalleulas.16=True cdnbaseurl.16=http://officecdn.microsoft.com/pr/7983bac0-e531-40cf-be00-fd24fe66619c version.16=16.0.17932.20396 mediatype.16=CDN baseurl.16=http://officecdn.microsoft.com/pr/7983bac0-e531-40cf-be00-fd24fe66619c sourcetype.16=CDN displaylevel=True uninstallpreviousversion=True Word2024Volume.excludedapps.16=onedrive Excel2024Volume.excludedapps.16=onedrive PowerPoint2024Volume.excludedapps.16=onedrive ProofingTools.excludedapps.16=onedrive
 
+REM echo Install Latest Office Updates
+REM start /WAIT "" "%SystemDrive%\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /update user updatepromptuser=false displaylevel=false forceappshutdown=true
+
+REM echo Disable Automatic Updates
+REM start /WAIT "" "%SystemDrive%\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /ChangeSetting updatesEnabled=False 16
+
 REM Remove Unnecessary Start Menu Shortcuts
 rd /s /q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools"
 
