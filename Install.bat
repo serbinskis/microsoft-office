@@ -1,7 +1,7 @@
 @echo off
 title Installing - Microsoft Office
 
-REM Download Office Click To Run
+REM Download Office Click To Runu
 powershell -command "New-Item -ItemType Directory -Force -Path '%SystemDrive%\Program Files\Common Files\Microsoft Shared\ClickToRun'" >nul
 powershell -command "(New-Object Net.WebClient).DownloadFile('http://officecdn.microsoft.com/pr/7983bac0-e531-40cf-be00-fd24fe66619c/Office/Data/16.0.17932.20396/i640.cab', '%TEMP%\office_i640.cab')"
 powershell -command "(New-Object Net.WebClient).DownloadFile('http://officecdn.microsoft.com/pr/7983bac0-e531-40cf-be00-fd24fe66619c/Office/Data/16.0.17932.20396/i641033.cab', '%TEMP%\office_i641033.cab')"
