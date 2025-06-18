@@ -52,4 +52,5 @@ reg add "HKCU\SOFTWARE\Microsoft\Office\16.0\Common\Privacy\SettingsStore\Anonym
 reg add "HKCU\SOFTWARE\Microsoft\Office\16.0\Common\PromoDialog" /v FluentWelcomeDialogDelay /t REG_DWORD /d 1 /f >nul 2>nul
 reg add "HKCU\SOFTWARE\Microsoft\Office\16.0\Common\PromoDialog" /v FluentWelcomeDialogShown /t REG_DWORD /d 1 /f >nul 2>nul
 reg add "HKCU\SOFTWARE\Microsoft\Office\16.0\Common\TeachingCallouts" /v PPT_RecordVideoPresentation_Callout /t REG_DWORD /d 2 /f >nul 2>nul
+reg add "HKCU\SOFTWARE\Microsoft\Office\16.0\Common\TeachingCallouts" /v PPT_RecordTab_Callout_Sequence /t REG_DWORD /d 2 /f >nul 2>nul
 reg add "HKCU\SOFTWARE\Microsoft\Office\16.0\Word\Options" /v Ruler /t REG_DWORD /d 1 /f >nul 2>nul
