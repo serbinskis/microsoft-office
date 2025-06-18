@@ -3,7 +3,7 @@
 Run the command line as administrator and execute the code below to install Microsoft Office.
 
 ```sh
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/serbinskis/microsoft-office/refs/heads/master/Install.bat' -OutFile \"$env:TEMP\Install.bat\""
+powershell -command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/serbinskis/microsoft-office/refs/heads/master/Install.bat' -OutFile \"$env:TEMP\Install.bat\""
 cmd.exe /c "%TEMP%\Install.bat" & del "%TEMP%\Install.bat"
 ```
 
@@ -12,7 +12,7 @@ cmd.exe /c "%TEMP%\Install.bat" & del "%TEMP%\Install.bat"
 Run the command line as administrator and execute the code below to activate Microsoft Office.
 
 ```sh
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/serbinskis/microsoft-office/refs/heads/master/Activate.bat' -OutFile \"$env:TEMP\Activate.bat\""
+powershell -command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/serbinskis/microsoft-office/refs/heads/master/Activate.bat' -OutFile \"$env:TEMP\Activate.bat\""
 cmd.exe /c "%TEMP%\Activate.bat" & del "%TEMP%\Activate.bat"
 ```
 
@@ -21,6 +21,6 @@ cmd.exe /c "%TEMP%\Activate.bat" & del "%TEMP%\Activate.bat"
 Run the command line as administrator and execute the code below to install & activate Microsoft Office.
 
 ```sh
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/serbinskis/microsoft-office/refs/heads/master/Setup.bat' -OutFile \"$env:TEMP\Setup.bat\""
+powershell -command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/serbinskis/microsoft-office/refs/heads/master/Setup.bat' -OutFile \"$env:TEMP\Setup.bat\""
 cmd.exe /c "%TEMP%\Setup.bat" & del "%TEMP%\Setup.bat"
 ```
