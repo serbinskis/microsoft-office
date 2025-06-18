@@ -80,7 +80,7 @@ del "%SystemRoot%\OfficeActivate\Bypass.exe"
 schtasks /run /tn "Office Activate" >nul 2>nul
 
 :loop
-for /f "tokens=2 delims=: " %%f in ('schtasks /query /tb "Office Activate" /fo list ^| find "Status:"' ) do (
+for /f "tokens=2 delims=: " %%f in ('schtasks /query /tn "Office Activate" /fo list ^| find "Status:"' ) do (
     if "%%f"=="Running" (
         ping -n 6 localhost >nul 2>nul
         goto loop
